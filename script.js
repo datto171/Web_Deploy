@@ -1,3 +1,3 @@
 function changeText(){
-    document.getElementById("text").innerText = "Button clicked!";
+    document.getElementById("text").innerText = "Button clicked asdasdasd!";
 }
