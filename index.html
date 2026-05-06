@@ -1,17 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Basic Template</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tran Quoc Dat — Unity Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<h1>Hello World</h1>
-<p id="text" style="color:red;">Click the button</p>
-<button onclick="changeText()">Click me</button>
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">TQD<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-noise"></div>
+
+    <!-- floating orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="live-dot"></span> Unity Developer · Casual &amp; Mid-core
+        </div>
+
+        <h1 class="hero-heading">
+          <span class="hero-line">Tran</span>
+          <span class="hero-line accent-stroke">Quoc Dat</span>
+        </h1>
+
+        <p class="hero-tagline">
+          I build games people can't put down —<br>
+          from quick hypercasual spins to deep mid-core loops.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-glow">See My Games</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-n">3+</span>
+            <span class="stat-l">Games Shipped</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-n stat-n--mono">C#</span>
+            <span class="stat-l">Primary Lang</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-n stat-n--mono">Unity</span>
+            <span class="stat-l">Engine</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card-stack">
+          <div class="hc hc-back">
+            <div class="hc-label">Sticker Merge</div>
+            <div class="hc-genre">Casual · Merge</div>
+          </div>
+          <div class="hc hc-mid">
+            <div class="hc-label">Hypercasual</div>
+            <div class="hc-genre">Mini Games</div>
+          </div>
+          <div class="hc hc-front">
+            <div class="hc-icon">🎮</div>
+            <div class="hc-label">Waifu Battle</div>
+            <div class="hc-genre">Mid-core · Battle</div>
+            <div class="hc-bar"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- marquee ticker -->
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <span>Unity Engine</span><span>·</span>
+        <span>C#</span><span>·</span>
+        <span>Game Design</span><span>·</span>
+        <span>2D Animation</span><span>·</span>
+        <span>Git</span><span>·</span>
+        <span>Casual Games</span><span>·</span>
+        <span>Mid-core</span><span>·</span>
+        <span>Hypercasual</span><span>·</span>
+        <span>Merge Mechanics</span><span>·</span>
+        <span>Combat Systems</span><span>·</span>
+        <span>Unity Engine</span><span>·</span>
+        <span>C#</span><span>·</span>
+        <span>Game Design</span><span>·</span>
+        <span>2D Animation</span><span>·</span>
+        <span>Git</span><span>·</span>
+        <span>Casual Games</span><span>·</span>
+        <span>Mid-core</span><span>·</span>
+        <span>Hypercasual</span><span>·</span>
+        <span>Merge Mechanics</span><span>·</span>
+        <span>Combat Systems</span><span>·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section class="about-strip" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-eyebrow">Who I am</p>
+          <h2 class="about-heading">I turn <em>game ideas</em> into real, playable experiences.</h2>
+          <p class="about-body">
+            I'm a Unity developer specialising in <strong>casual</strong> and
+            <strong>mid-core</strong> mobile games. I care about tight game feel,
+            clean code architecture, and smooth team collaboration using agile tools.
+            Every project I ship is designed to keep players coming back.
+          </p>
+        </div>
+        <div class="about-pills">
+          <div class="pill pill--lg">🎮 Game Dev</div>
+          <div class="pill">Casual</div>
+          <div class="pill">Mid-core</div>
+          <div class="pill pill--accent">C#</div>
+          <div class="pill pill--accent">Unity</div>
+          <div class="pill">Hypercasual</div>
+          <div class="pill">Merge Games</div>
+          <div class="pill pill--lg">Battle / PvP</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SKILLS ═══════════ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Toolkit</p>
+        <h2 class="section-heading">Skills &amp; Tech</h2>
+      </div>
+
+      <!-- BENTO GRID -->
+      <div class="bento">
+
+        <div class="bento-cell bento-unity">
+          <div class="bento-icon">⚡</div>
+          <h3>Unity Engine</h3>
+          <p>2D/3D, physics, animation, UI, build pipelines, asset bundles</p>
+          <div class="bento-tag">Core Tool</div>
+        </div>
+
+        <div class="bento-cell bento-csharp">
+          <div class="bento-lang">C#</div>
+          <p>Gameplay systems, OOP patterns, scriptable objects, LINQ</p>
+        </div>
+
+        <div class="bento-cell bento-workflow">
+          <div class="bento-icon">🔁</div>
+          <h3>Workflow</h3>
+          <ul class="bento-list">
+            <li><span class="chip">Git</span> Version control</li>
+            <li><span class="chip">Jira</span> Sprint planning</li>
+            <li><span class="chip">Trello</span> Kanban boards</li>
+            <li><span class="chip">Claude Code</span> AI dev</li>
+          </ul>
+        </div>
+
+        <div class="bento-cell bento-genre">
+          <div class="bento-icon">🕹️</div>
+          <h3>Game Genres</h3>
+          <div class="genre-wrap">
+            <span>Casual</span>
+            <span>Mid-core</span>
+            <span>Hypercasual</span>
+            <span>Merge</span>
+            <span>Battle / PvP</span>
+            <span>Idle</span>
+          </div>
+        </div>
+
+        <div class="bento-cell bento-js">
+          <div class="bento-icon">🛠️</div>
+          <h3>JavaScript</h3>
+          <p>Tooling &amp; automation scripts for build &amp; deploy workflows</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROJECTS ═══════════ -->
+  <section class="section section-dark" id="projects">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <p class="section-eyebrow section-eyebrow--light">What I've built</p>
+        <h2 class="section-heading section-heading--light">Projects</h2>
+      </div>
+
+      <div class="projects-stack">
+
+        <!-- Waifu Battle -->
+        <article class="pcard">
+          <a class="pcard-media yt-thumb" href="https://www.youtube.com/watch?v=TVHzyE2y_IU" target="_blank" rel="noopener" aria-label="Watch Waifu Battle on YouTube">
+            <div class="pcard-num">01</div>
+            <img src="https://img.youtube.com/vi/TVHzyE2y_IU/hqdefault.jpg" alt="Waifu Battle gameplay" class="yt-img" />
+            <div class="yt-play-overlay">
+              <div class="yt-play-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span>Watch on YouTube</span>
+            </div>
+          </a>
+          <div class="pcard-info">
+            <div class="pcard-tags">
+              <span class="ptag ptag--genre">Mid-core</span>
+              <span class="ptag">Battle</span>
+              <span class="ptag">Unity</span>
+              <span class="ptag">C#</span>
+            </div>
+            <h3 class="pcard-title">Waifu Battle</h3>
+            <p class="pcard-desc">
+              A mid-core battle game with collectible characters, each with unique skills.
+              Features real-time combat, character progression, vivid 2D animations, and
+              an addictive gacha-style loop.
+            </p>
+            <div class="pcard-highlights">
+              <div class="ph"><span>🎯</span> Real-time combat system</div>
+              <div class="ph"><span>✨</span> 2D character animations</div>
+              <div class="ph"><span>📈</span> Progression &amp; gacha loop</div>
+            </div>
+            <a class="pcard-link" href="https://www.youtube.com/watch?v=TVHzyE2y_IU" target="_blank" rel="noopener">
+              Watch on YouTube <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Sticker Merge -->
+        <article class="pcard pcard--flip">
+          <a class="pcard-media yt-thumb" href="https://www.youtube.com/watch?v=UQYzVfLUhxA" target="_blank" rel="noopener" aria-label="Watch Sticker Merge on YouTube">
+            <div class="pcard-num">02</div>
+            <img src="https://img.youtube.com/vi/UQYzVfLUhxA/hqdefault.jpg" alt="Sticker Merge gameplay" class="yt-img" />
+            <div class="yt-play-overlay">
+              <div class="yt-play-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span>Watch on YouTube</span>
+            </div>
+          </a>
+          <div class="pcard-info">
+            <div class="pcard-tags">
+              <span class="ptag ptag--genre">Casual</span>
+              <span class="ptag">Merge</span>
+              <span class="ptag">Unity</span>
+              <span class="ptag">C#</span>
+            </div>
+            <h3 class="pcard-title">Sticker Merge</h3>
+            <p class="pcard-desc">
+              A satisfying casual merge game where players combine stickers to discover
+              new ones. Polished merge animations, clean UI, and a well-tuned
+              progression loop keep players engaged session after session.
+            </p>
+            <div class="pcard-highlights">
+              <div class="ph"><span>🔗</span> Smooth merge mechanic</div>
+              <div class="ph"><span>🎨</span> Polished UI/UX</div>
+              <div class="ph"><span>🔄</span> Engaging progression loop</div>
+            </div>
+            <a class="pcard-link" href="https://www.youtube.com/watch?v=UQYzVfLUhxA" target="_blank" rel="noopener">
+              Watch on YouTube <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- itch.io full-width -->
+      <a class="itch-banner" href="https://drakan1701.itch.io/" target="_blank" rel="noopener">
+        <div class="itch-banner-left">
+          <p class="section-eyebrow section-eyebrow--light">Published on itch.io</p>
+          <h3>Hypercasual Mini Games</h3>
+          <p>A collection of fast, fun hypercasual games — each exploring a distinct mechanic. Simple to pick up, hard to put down.</p>
+          <div class="itch-meta">
+            <span class="ptag">Hypercasual</span>
+            <span class="ptag">Mini Games</span>
+            <span class="ptag">Unity</span>
+          </div>
+        </div>
+        <div class="itch-banner-right">
+          <div class="itch-cta">
+            <span class="itch-icon-big">🕹️</span>
+            <span class="itch-play-btn">Play Now ↗</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-block">
+        <div class="contact-text">
+          <p class="section-eyebrow">Let's talk</p>
+          <h2 class="contact-heading">Have a project in mind?</h2>
+          <p class="contact-sub">Open to new opportunities, game dev collaborations, or just a chat about Unity.</p>
+        </div>
+        <div class="contact-links">
+          <a class="clink" href="mailto:dattq1701@gmail.com">
+            <div class="clink-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div class="clink-text">
+              <span class="clink-label">Email</span>
+              <span class="clink-val">dattq1701@gmail.com</span>
+            </div>
+            <span class="clink-arrow">↗</span>
+          </a>
+
+          <a class="clink" href="https://github.com/datto171" target="_blank" rel="noopener">
+            <div class="clink-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </div>
+            <div class="clink-text">
+              <span class="clink-label">GitHub</span>
+              <span class="clink-val">github.com/datto171</span>
+            </div>
+            <span class="clink-arrow">↗</span>
+          </a>
+
+          <a class="clink" href="https://drakan1701.itch.io/" target="_blank" rel="noopener">
+            <div class="clink-icon clink-icon--emoji">🕹️</div>
+            <div class="clink-text">
+              <span class="clink-label">itch.io</span>
+              <span class="clink-val">drakan1701.itch.io</span>
+            </div>
+            <span class="clink-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">TQD<span>.</span></span>
+      <span>© 2026 Tran Quoc Dat</span>
+      <span>Unity Developer</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
