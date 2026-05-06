@@ -530,13 +530,13 @@ iframe { display: block; }
 .bento-js     { grid-column: span 3; grid-row: 2; }
 
 .bento-unity {
-  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-3) 100%);
-  border-color: rgba(124,92,240,.3);
+  background: linear-gradient(135deg, #2a1a5e 0%, #3d2a80 100%);
+  border-color: rgba(124,92,240,.5);
   color: var(--white);
   box-shadow: var(--sh-glow);
 }
 .bento-unity h3, .bento-unity p { color: var(--white); }
-.bento-unity p { opacity: .6; }
+.bento-unity p { opacity: .85; }
 
 .bento-csharp {
   background: linear-gradient(135deg, #1a1040, #2d1a6e);
