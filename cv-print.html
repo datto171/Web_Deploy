@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tran Quoc Dat — CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #7c3aed;
+      --accent2: #a855f7;
+      --dark: #0f0f13;
+      --text: #1a1a2e;
+      --muted: #64648a;
+      --border: #e2e2f0;
+      --bg-light: #f8f8fc;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #fff;
+      font-size: 10pt;
+      line-height: 1.55;
+    }
+
+    /* ── PAGE ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 12mm 14mm 12mm 14mm;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media print {
+      html, body { background: #fff; }
+      .page { margin: 0; padding: 12mm 14mm; }
+      .no-print { display: none !important; }
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2.5px solid var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .header-left h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      color: var(--dark);
+    }
+
+    .header-left h1 span {
+      color: var(--accent);
+    }
+
+    .header-title {
+      font-size: 10pt;
+      font-weight: 500;
+      color: var(--accent2);
+      margin-top: 3px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .header-tagline {
+      font-size: 8.5pt;
+      color: var(--muted);
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    .header-contacts {
+      text-align: right;
+      font-size: 8pt;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      justify-content: center;
+    }
+
+    .header-contacts a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .header-contacts .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: flex-end;
+    }
+
+    .contact-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: flex;
+      gap: 0;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 8px 6px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-size: 13pt;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+    }
+
+    .stat-lbl {
+      font-size: 7pt;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    /* ── LAYOUT ── */
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 14px;
+    }
+
+    /* ── SECTION ── */
+    .sec {
+      margin-bottom: 14px;
+    }
+
+    .sec-label {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── ABOUT ── */
+    .about-text {
+      font-size: 9pt;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .about-text strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    /* ── SKILLS ── */
+    .skill-group {
+      margin-bottom: 8px;
+    }
+
+    .skill-group-name {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 3px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+
+    .stag {
+      font-size: 7pt;
+      padding: 2px 7px;
+      border-radius: 20px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      color: #444;
+      white-space: nowrap;
+    }
+
+    .stag--accent {
+      background: #ede9fe;
+      border-color: #c4b5fd;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-item {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      padding: 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-light);
+    }
+
+    .edu-year {
+      font-size: 7.5pt;
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
+      padding-top: 1px;
+    }
+
+    .edu-name {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .edu-degree {
+      font-size: 7.5pt;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    /* ── PROJECTS ── */
+    .project-item {
+      margin-bottom: 10px;
+      padding: 9px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      position: relative;
+      page-break-inside: avoid;
+    }
+
+    .project-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      border-radius: 8px 0 0 8px;
+      background: var(--accent);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .project-num {
+      font-size: 7pt;
+      color: var(--accent);
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .project-name {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .project-link {
+      font-size: 7pt;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      margin-bottom: 5px;
+    }
+
+    .ptag {
+      font-size: 7pt;
+      padding: 1px 6px;
+      border-radius: 20px;
+      background: #ede9fe;
+      border: 1px solid #c4b5fd;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .project-desc {
+      font-size: 8.5pt;
+      color: #444;
+      line-height: 1.55;
+      margin-bottom: 5px;
+    }
+
+    .project-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+    }
+
+    .ph {
+      font-size: 7.5pt;
+      color: var(--muted);
+    }
+
+    .ph-icon {
+      margin-right: 3px;
+    }
+
+    /* ── WORKFLOW ── */
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+    }
+
+    .wf-item {
+      font-size: 8pt;
+      padding: 4px 8px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: #333;
+    }
+
+    .wf-name {
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    /* ── PRINT BUTTON ── */
+    .print-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 32px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11pt;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      width: fit-content;
+      transition: background 0.2s;
+    }
+
+    .print-btn:hover { background: #6d28d9; }
+
+    @media print {
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn no-print" onclick="window.print()">
+    🖨️ Print / Save as PDF
+  </button>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <h1>Tran Quoc <span>Dat</span></h1>
+        <div class="header-title">Unity Developer</div>
+        <div class="header-tagline">"Keep moving — the destination will find you."</div>
+      </div>
+      <div class="header-contacts">
+        <div class="contact-row">
+          <div class="contact-dot"></div>
+          <a href="mailto:dattq1701@gmail.com">dattq1701@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <div class="contact-dot"></div>
+          <a href="https://github.com/datto171">github.com/datto171</a>
+        </div>
+        <div class="contact-row">
+          <div class="contact-dot"></div>
+          <a href="https://drakan1701.itch.io">drakan1701.itch.io</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-num">4+</span>
+        <span class="stat-lbl">Years Exp</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3+</span>
+        <span class="stat-lbl">Games Shipped</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3–4</span>
+        <span class="stat-lbl">Team Managed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">C#</span>
+        <span class="stat-lbl">Primary Lang</span>
+      </div>
+    </div>
+
+    <!-- MAIN COLUMNS -->
+    <div class="columns">
+
+      <!-- LEFT COLUMN -->
+      <div class="left-col">
+
+        <!-- SKILLS -->
+        <div class="sec">
+          <div class="sec-label">Skills &amp; Tech</div>
+
+          <div class="skill-group">
+            <div class="skill-group-name">Core</div>
+            <div class="skill-tags">
+              <span class="stag stag--accent">Unity Engine</span>
+              <span class="stag stag--accent">C#</span>
+              <span class="stag">2D / 3D</span>
+              <span class="stag">Physics</span>
+              <span class="stag">Animation</span>
+              <span class="stag">UI Toolkit</span>
+              <span class="stag">Asset Bundles</span>
+              <span class="stag">Build Pipelines</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-name">Patterns &amp; Code</div>
+            <div class="skill-tags">
+              <span class="stag">OOP Patterns</span>
+              <span class="stag">Scriptable Objects</span>
+              <span class="stag">LINQ</span>
+              <span class="stag">Gameplay Systems</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-name">Game Genres</div>
+            <div class="skill-tags">
+              <span class="stag">Casual</span>
+              <span class="stag">Mid-core</span>
+              <span class="stag">Hypercasual</span>
+              <span class="stag">Merge</span>
+              <span class="stag">Battle / PvP</span>
+              <span class="stag">Idle</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-name">Other</div>
+            <div class="skill-tags">
+              <span class="stag">JavaScript</span>
+              <span class="stag">Build Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WORKFLOW -->
+        <div class="sec">
+          <div class="sec-label">Workflow</div>
+          <div class="workflow-grid">
+            <div class="wf-item"><span class="wf-name">Git</span> — Version control</div>
+            <div class="wf-item"><span class="wf-name">Jira</span> — Sprint planning</div>
+            <div class="wf-item"><span class="wf-name">Trello</span> — Kanban</div>
+            <div class="wf-item"><span class="wf-name">Claude Code</span> — AI dev</div>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="sec">
+          <div class="sec-label">Education</div>
+
+          <div class="edu-item">
+            <div class="edu-year">2014–2018</div>
+            <div>
+              <div class="edu-name">National Economics University</div>
+              <div class="edu-degree">Bachelor's Degree</div>
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-year">2016–2018</div>
+            <div>
+              <div class="edu-name">FPT Aptech</div>
+              <div class="edu-degree">Software Development · Programming &amp; Engineering</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="right-col">
+
+        <!-- ABOUT -->
+        <div class="sec">
+          <div class="sec-label">About Me</div>
+          <p class="about-text">
+            Unity developer with <strong>4+ years of experience</strong> specialising in <strong>casual</strong> and
+            <strong>mid-core</strong> mobile games. I've led and managed teams of <strong>3–4 people</strong>,
+            driving projects from concept to ship. I care about tight game feel, clean code architecture,
+            and smooth team collaboration using agile tools and AI-powered workflows. Every project I ship
+            is designed to keep players coming back.
+          </p>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="sec">
+          <div class="sec-label">Projects</div>
+
+          <!-- Waifu Battle -->
+          <div class="project-item">
+            <div class="project-header">
+              <div>
+                <span class="project-num">01</span>
+                <span class="project-name">Waifu Battle</span>
+              </div>
+              <a class="project-link" href="https://www.youtube.com/watch?v=TVHzyE2y_IU">youtube.com ↗</a>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Mid-core</span>
+              <span class="ptag">Battle</span>
+              <span class="ptag">Unity</span>
+              <span class="ptag">C#</span>
+            </div>
+            <p class="project-desc">
+              A mid-core battle game with collectible characters, each with unique skills. Features
+              real-time combat, character progression, vivid 2D animations, and an addictive gacha-style loop.
+            </p>
+            <div class="project-highlights">
+              <span class="ph"><span class="ph-icon">🎯</span>Real-time combat system</span>
+              <span class="ph"><span class="ph-icon">✨</span>2D character animations</span>
+              <span class="ph"><span class="ph-icon">📈</span>Progression &amp; gacha loop</span>
+            </div>
+          </div>
+
+          <!-- Sticker Merge -->
+          <div class="project-item">
+            <div class="project-header">
+              <div>
+                <span class="project-num">02</span>
+                <span class="project-name">Sticker Merge</span>
+              </div>
+              <a class="project-link" href="https://www.youtube.com/watch?v=UQYzVfLUhxA">youtube.com ↗</a>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Casual</span>
+              <span class="ptag">Merge</span>
+              <span class="ptag">Unity</span>
+              <span class="ptag">C#</span>
+            </div>
+            <p class="project-desc">
+              A satisfying casual merge game where players combine stickers to discover new ones.
+              Polished merge animations, clean UI, and a well-tuned progression loop keep players
+              engaged session after session.
+            </p>
+            <div class="project-highlights">
+              <span class="ph"><span class="ph-icon">🔗</span>Smooth merge mechanic</span>
+              <span class="ph"><span class="ph-icon">🎨</span>Polished UI/UX</span>
+              <span class="ph"><span class="ph-icon">🔄</span>Engaging progression loop</span>
+            </div>
+          </div>
+
+          <!-- Hypercasual Mini Games -->
+          <div class="project-item">
+            <div class="project-header">
+              <div>
+                <span class="project-num">03</span>
+                <span class="project-name">Hypercasual Mini Games</span>
+              </div>
+              <a class="project-link" href="https://drakan1701.itch.io">drakan1701.itch.io ↗</a>
+            </div>
+            <div class="project-tags">
+              <span class="ptag">Hypercasual</span>
+              <span class="ptag">Mini Games</span>
+              <span class="ptag">Unity</span>
+              <span class="ptag">itch.io</span>
+            </div>
+            <p class="project-desc">
+              A collection of fast, fun hypercasual games published on itch.io — each exploring a
+              distinct mechanic. Simple to pick up, hard to put down.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <button class="print-btn no-print" onclick="window.print()">
+    🖨️ Print / Save as PDF
+  </button>
+
+</body>
+</html>
