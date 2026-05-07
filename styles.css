@@ -978,6 +978,113 @@ iframe { display: block; }
 .reveal-delay-3 { transition-delay: .3s; }
 
 /* ════════════════════════════════════════════
+   HERO AVATAR
+════════════════════════════════════════════ */
+.hero-avatar-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-avatar {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 24px;
+  border: 2px solid rgba(124, 92, 240, 0.3);
+  box-shadow: 0 0 0 8px rgba(124, 92, 240, 0.08), 0 24px 60px rgba(0,0,0,0.5);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.hero-avatar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 8px rgba(124, 92, 240, 0.15), 0 32px 80px rgba(0,0,0,0.6);
+}
+
+/* ════════════════════════════════════════════
+   EDUCATION
+════════════════════════════════════════════ */
+.section-edu { background: var(--surface); }
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  padding: 28px 32px;
+  box-shadow: var(--sh-sm);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  position: relative;
+  overflow: hidden;
+}
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px 0 0 4px;
+}
+.edu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sh);
+  border-color: var(--accent);
+}
+
+.edu-year {
+  font-family: var(--font-display);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 6px 12px;
+  border-radius: var(--r);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.edu-info {
+  flex: 1;
+}
+
+.edu-school {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 4px;
+}
+
+.edu-degree {
+  font-size: .85rem;
+  color: var(--text-muted-dark);
+  margin: 0;
+}
+
+.edu-grade {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.edu-badge {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════════ */
 @media (max-width: 960px) {
@@ -1014,6 +1121,7 @@ iframe { display: block; }
   .itch-banner { grid-template-columns: 1fr; gap: 28px; padding: 36px; }
 
   .contact-block { grid-template-columns: 1fr; gap: 48px; }
+  .edu-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
