@@ -742,6 +742,16 @@ iframe { display: block; }
 .pcard-link:hover { gap: 10px; }
 .pcard-link span { font-size: 1rem; }
 
+.pcard-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin-top: 6px;
+}
+.pcard-links .pcard-link { margin-top: 0; }
+.pcard-link--gp { color: #34a853; }
+.pcard-link--gp:hover { color: #2d9248; }
+
 /* itch.io full-width card */
 .itch-banner {
   display: grid;
@@ -960,6 +970,56 @@ iframe { display: block; }
   letter-spacing: .06em;
   text-transform: uppercase;
 }
+
+/* ════════════════════════════════════════════
+   GOOGLE PLAY THUMBNAIL
+════════════════════════════════════════════ */
+.gp-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1a1a2e 0%, #0d1b2a 50%, #0a2540 100%);
+  text-decoration: none;
+  transition: background .3s;
+}
+.gp-thumb:hover {
+  background: linear-gradient(145deg, #22223a 0%, #142030 50%, #0d3055 100%);
+}
+.gp-media-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.gp-game-icon {
+  font-size: 5rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,.5));
+  transition: transform .3s;
+}
+.gp-thumb:hover .gp-game-icon { transform: scale(1.08); }
+.gp-badge-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  transition: background .25s, border-color .25s;
+}
+.gp-thumb:hover .gp-badge-btn {
+  background: rgba(255,255,255,.18);
+  border-color: rgba(255,255,255,.4);
+}
+.gp-badge-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
 
 /* ════════════════════════════════════════════
    REVEAL ANIMATIONS
