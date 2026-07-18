@@ -1,446 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tran Quoc Dat — Unity Developer</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tran Quoc Dat | Unity Developer</title>
+  <meta name="description" content="Portfolio of Tran Quoc Dat — Unity developer with 4+ years shipping casual and mid-core mobile games." />
+  <meta name="keywords" content="Unity,Game Developer,C#,Mobile Games,Casual,Mid-core" />
+  <meta property="og:title" content="Tran Quoc Dat | Unity Developer" />
+  <meta property="og:description" content="Portfolio of Tran Quoc Dat — Unity developer with 4+ years shipping casual and mid-core mobile games." />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-</head>
-<body>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- ═══════════ NAV ═══════════ -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">TQD<span>.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .font-heading { font-family: "Space Grotesk", system-ui, sans-serif; }
+    .font-body { font-family: Inter, system-ui, sans-serif; }
+    /* mobile menu */
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .mobile-menu.open { max-height: 320px; }
+  </style>
+</head>
+
+<body class="font-body bg-zinc-50 text-zinc-900 antialiased">
+
+  <!-- ════════ NAV ════════ -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" id="nav-logo" class="font-heading text-xl font-semibold text-white tracking-wide transition-colors">Tran Quoc Dat</a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="#about" class="nav-link font-body text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200 tracking-wide uppercase">About</a></li>
+        <li><a href="#skills" class="nav-link font-body text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200 tracking-wide uppercase">Skills</a></li>
+        <li><a href="#projects" class="nav-link font-body text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200 tracking-wide uppercase">Projects</a></li>
+        <li><a href="#education" class="nav-link font-body text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200 tracking-wide uppercase">Education</a></li>
+        <li><a href="#contact" class="nav-link font-body text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200 tracking-wide uppercase">Contact</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span>
+      <button id="nav-toggle" class="md:hidden text-slate-300 hover:text-white transition-colors cursor-pointer p-1" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-slate-900/95 backdrop-blur border-t border-slate-800">
+      <ul class="flex flex-col px-6 py-2">
+        <li><a href="#about" class="block py-3 font-body text-sm font-medium text-slate-300 hover:text-white tracking-wide uppercase">About</a></li>
+        <li><a href="#skills" class="block py-3 font-body text-sm font-medium text-slate-300 hover:text-white tracking-wide uppercase">Skills</a></li>
+        <li><a href="#projects" class="block py-3 font-body text-sm font-medium text-slate-300 hover:text-white tracking-wide uppercase">Projects</a></li>
+        <li><a href="#education" class="block py-3 font-body text-sm font-medium text-slate-300 hover:text-white tracking-wide uppercase">Education</a></li>
+        <li><a href="#contact" class="block py-3 font-body text-sm font-medium text-slate-300 hover:text-white tracking-wide uppercase">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
-  <!-- ═══════════ HERO ═══════════ -->
-  <section class="hero" id="hero">
-    <div class="hero-noise"></div>
+  <main>
+    <!-- ════════ HERO ════════ -->
+    <section class="relative min-h-screen bg-slate-900 flex items-center overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.04]" style="background-image:linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);background-size:60px 60px"></div>
+      <div class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
-    <!-- floating orbs -->
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-badge">
-          <span class="live-dot"></span> Unity Developer · 4+ Years Experience
+      <div class="relative z-10 w-full max-w-6xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="font-body text-xs font-semibold tracking-[0.3em] uppercase text-blue-400 mb-6">Unity Developer · 4+ Years</p>
+          <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-none mb-6">Tran Quoc Dat</h1>
+          <div class="flex items-center gap-4 mb-8">
+            <div class="h-px w-12 bg-blue-500/60"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+            <div class="h-px w-12 bg-blue-500/60"></div>
+          </div>
+          <p class="font-body text-lg text-slate-400 leading-relaxed mb-10 max-w-md">Keep moving — the destination will find you.</p>
+          <div class="flex flex-col sm:flex-row items-start gap-4">
+            <a href="#projects" class="font-body inline-flex items-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold tracking-wide uppercase rounded transition-colors duration-200 cursor-pointer">See My Games
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#contact" class="font-body inline-flex items-center gap-2 px-8 py-3.5 border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white text-sm font-semibold tracking-wide uppercase rounded transition-colors duration-200 cursor-pointer">Get in Touch</a>
+          </div>
         </div>
 
-        <h1 class="hero-heading">
-          <span class="hero-line">Tran</span>
-          <span class="hero-line accent-stroke">Quoc Dat</span>
-        </h1>
-
-        <p class="hero-tagline">Keep moving — the destination will find you.</p>
-
-        <div class="hero-btns">
-          <a href="#projects" class="btn btn-glow">See My Games</a>
-          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-n">4+</span>
-            <span class="stat-l">Years Exp</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-n">3+</span>
-            <span class="stat-l">Games Shipped</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-n">3–4</span>
-            <span class="stat-l">Team Managed</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <span class="stat-n stat-n--mono">C#</span>
-            <span class="stat-l">Primary Lang</span>
+        <div class="flex justify-center md:justify-end">
+          <div class="relative">
+            <div class="absolute -inset-3 rounded-2xl border border-blue-500/20"></div>
+            <div class="absolute -inset-6 rounded-2xl border border-slate-700/40"></div>
+            <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden">
+              <img alt="Tran Quoc Dat profile photo" class="object-cover object-top w-full h-full" src="zxc.PNG" />
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="hero-right">
-        <div class="hero-avatar-wrap">
-          <img src="zxc.PNG" alt="Tran Quoc Dat" class="hero-avatar" />
-        </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500">
+        <span class="font-body text-xs tracking-widest uppercase">Scroll</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"></path></svg>
       </div>
-    </div>
+    </section>
 
-    <!-- marquee ticker -->
-    <div class="ticker-wrap">
-      <div class="ticker">
-        <span>Unity Engine</span><span>·</span>
-        <span>C#</span><span>·</span>
-        <span>Game Design</span><span>·</span>
-        <span>2D Animation</span><span>·</span>
-        <span>Git</span><span>·</span>
-        <span>Casual Games</span><span>·</span>
-        <span>Mid-core</span><span>·</span>
-        <span>Hypercasual</span><span>·</span>
-        <span>Merge Mechanics</span><span>·</span>
-        <span>Combat Systems</span><span>·</span>
-        <span>Unity Engine</span><span>·</span>
-        <span>C#</span><span>·</span>
-        <span>Game Design</span><span>·</span>
-        <span>2D Animation</span><span>·</span>
-        <span>Git</span><span>·</span>
-        <span>Casual Games</span><span>·</span>
-        <span>Mid-core</span><span>·</span>
-        <span>Hypercasual</span><span>·</span>
-        <span>Merge Mechanics</span><span>·</span>
-        <span>Combat Systems</span><span>·</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ ABOUT ═══════════ -->
-  <section class="about-strip" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="section-eyebrow">Who I am</p>
-          <h2 class="about-heading">I turn <em>game ideas</em> into real, playable experiences.</h2>
-          <p class="about-body">
-            I'm a Unity developer with <strong>4+ years of experience</strong> specialising in <strong>casual</strong> and
-            <strong>mid-core</strong> mobile games. I've led and managed teams of <strong>3–4 people</strong>, driving projects
-            from concept to ship. I care about tight game feel, clean code architecture,
-            and smooth team collaboration using agile tools and AI-powered workflows with Claude Code.
-            Every project I ship is designed to keep players coming back.
-          </p>
+    <!-- ════════ ABOUT ════════ -->
+    <section id="about" class="py-24 px-6 bg-sky-50 scroll-mt-16">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="font-body text-xs font-semibold tracking-[0.3em] uppercase text-blue-600 mb-4">About Me</p>
+          <h2 class="font-heading text-5xl md:text-6xl font-semibold text-slate-900 leading-tight">From idea<br/><span class="text-blue-600">to shipped game.</span></h2>
+          <div class="mt-6 w-12 h-0.5 bg-blue-600"></div>
         </div>
-        <div class="about-pills">
-          <div class="pill pill--lg">🎮 Game Dev</div>
-          <div class="pill">Casual</div>
-          <div class="pill">Mid-core</div>
-          <div class="pill pill--accent">C#</div>
-          <div class="pill pill--accent">Unity</div>
-          <div class="pill">Hypercasual</div>
-          <div class="pill">Merge Games</div>
-          <div class="pill">4+ Years</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ SKILLS ═══════════ -->
-  <section class="section" id="skills">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Toolkit</p>
-        <h2 class="section-heading">Skills &amp; Tech</h2>
-      </div>
-
-      <!-- BENTO GRID -->
-      <div class="bento">
-
-        <div class="bento-cell bento-unity">
-          <div class="bento-icon">⚡</div>
-          <h3>Unity Engine</h3>
-          <p>2D/3D, physics, animation, UI, build pipelines, asset bundles</p>
-          <div class="bento-tag">Core Tool</div>
-        </div>
-
-        <div class="bento-cell bento-csharp">
-          <div class="bento-lang">C#</div>
-          <p>Gameplay systems, OOP patterns, scriptable objects, LINQ</p>
-        </div>
-
-        <div class="bento-cell bento-workflow">
-          <div class="bento-icon">🔁</div>
-          <h3>Workflow</h3>
-          <ul class="bento-list">
-            <li><span class="chip">Git</span> Version control</li>
-            <li><span class="chip">Jira</span> Sprint planning</li>
-            <li><span class="chip">Trello</span> Kanban boards</li>
-            <li><span class="chip">Claude Code</span> AI dev</li>
-          </ul>
-        </div>
-
-        <div class="bento-cell bento-genre">
-          <div class="bento-icon">🕹️</div>
-          <h3>Game Genres</h3>
-          <div class="genre-wrap">
-            <span>Casual</span>
-            <span>Mid-core</span>
-            <span>Hypercasual</span>
-            <span>Merge</span>
-            <span>Battle / PvP</span>
-            <span>Idle</span>
+        <div>
+          <p class="font-body text-lg text-slate-600 leading-relaxed mb-10">I turn game ideas into real, playable products. Unity developer with 4+ years building casual and mid-core mobile games on iOS and Android. I've led teams of 3–4 from concept to live launch — architecting clean, scalable C# gameplay systems and optimizing performance for low-end devices. I care about tight game feel, maintainable code, and efficient collaboration that keeps players coming back.</p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="border-t-2 border-blue-600 pt-4">
+              <p class="font-body text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 mb-1">4+ years</p>
+              <p class="font-heading text-2xl font-semibold text-slate-900 leading-tight">Unity<br/>Developer</p>
+            </div>
+            <div class="border-t-2 border-blue-600 pt-4">
+              <p class="font-body text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 mb-1">3+ titles</p>
+              <p class="font-heading text-2xl font-semibold text-slate-900 leading-tight">Games<br/>Shipped</p>
+            </div>
+            <div class="border-t-2 border-blue-600 pt-4">
+              <p class="font-body text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 mb-1">3–4 people</p>
+              <p class="font-heading text-2xl font-semibold text-slate-900 leading-tight">Team<br/>Managed</p>
+            </div>
+            <div class="border-t-2 border-blue-600 pt-4">
+              <p class="font-body text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 mb-1">Primary</p>
+              <p class="font-heading text-2xl font-semibold text-slate-900 leading-tight">C# &amp;<br/>Unity</p>
+            </div>
           </div>
         </div>
-
-        <div class="bento-cell bento-js">
-          <div class="bento-icon">🛠️</div>
-          <h3>JavaScript</h3>
-          <p>Tooling &amp; automation scripts for build &amp; deploy workflows</p>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════ EDUCATION ═══════════ -->
-  <section class="section section-edu" id="education">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Academic Background</p>
-        <h2 class="section-heading">Education</h2>
-      </div>
-      <div class="edu-grid">
+    <!-- ════════ SKILLS ════════ -->
+    <section id="skills" class="py-24 px-6 bg-slate-900 scroll-mt-16">
+      <div class="max-w-6xl mx-auto">
+        <p class="font-body text-xs font-semibold tracking-[0.3em] uppercase text-blue-400 mb-4">Expertise</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-semibold text-white mb-16">Skills &amp; Tech Stack</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-        <div class="edu-card">
-          <div class="edu-year">2014 – 2018</div>
-          <div class="edu-info">
-            <h3 class="edu-school">National Economics University (NEU)</h3>
-            <p class="edu-degree">Bachelor's Degree</p>
+          <!-- Game Engine -->
+          <div>
+            <h3 class="font-body text-xs font-semibold tracking-[0.25em] uppercase text-blue-400 mb-4">Game Engine</h3>
+            <ul>
+              <li class="py-4 border-b border-slate-800 last:border-0">
+                <div class="flex items-center gap-3">
+                  <div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div>
+                  <span class="font-body font-semibold text-white text-base">Unity Engine</span>
+                </div>
+                <ul class="mt-2 ml-[18px] space-y-1.5 pl-3 border-l border-slate-700">
+                  <li class="flex items-start gap-2"><svg class="mt-[3px] shrink-0 text-blue-500" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg><span class="font-body text-sm text-slate-400 leading-relaxed">2D/3D gameplay, physics &amp; collision, animation, UI/UX</span></li>
+                  <li class="flex items-start gap-2"><svg class="mt-[3px] shrink-0 text-blue-500" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg><span class="font-body text-sm text-slate-400 leading-relaxed">Shaders &amp; VFX, build pipelines, asset bundles</span></li>
+                  <li class="flex items-start gap-2"><svg class="mt-[3px] shrink-0 text-blue-500" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg><span class="font-body text-sm text-slate-400 leading-relaxed">Performance profiling &amp; optimization for low-end devices</span></li>
+                </ul>
+              </li>
+            </ul>
           </div>
-          <div class="edu-badge">🎓 NEU</div>
-        </div>
 
-        <div class="edu-card">
-          <div class="edu-year">2016 – 2018</div>
-          <div class="edu-info">
-            <h3 class="edu-school">FPT Aptech</h3>
-            <p class="edu-degree">Software Development &nbsp;·&nbsp; Programming &amp; Engineering</p>
+          <!-- Programming Languages -->
+          <div>
+            <h3 class="font-body text-xs font-semibold tracking-[0.25em] uppercase text-blue-400 mb-4">Programming Languages</h3>
+            <ul>
+              <li class="py-4 border-b border-slate-800 last:border-0">
+                <div class="flex items-center gap-3">
+                  <div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div>
+                  <span class="font-body font-semibold text-white text-base">C# / Unity</span>
+                </div>
+                <ul class="mt-2 ml-[18px] space-y-1.5 pl-3 border-l border-slate-700">
+                  <li class="flex items-start gap-2"><svg class="mt-[3px] shrink-0 text-blue-500" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg><span class="font-body text-sm text-slate-400 leading-relaxed">Gameplay architecture, OOP &amp; design patterns, ScriptableObjects, object pooling, state machines, LINQ</span></li>
+                </ul>
+              </li>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center">
+                <div class="flex items-center gap-3">
+                  <div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div>
+                  <span class="font-body font-semibold text-white text-sm">JavaScript</span>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div class="edu-badge">💻 Aptech</div>
+
+          <!-- Tools -->
+          <div>
+            <h3 class="font-body text-xs font-semibold tracking-[0.25em] uppercase text-blue-400 mb-4">Tools</h3>
+            <ul>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center"><div class="flex items-center gap-3"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div><span class="font-body font-semibold text-white text-sm">Git</span></div></li>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center"><div class="flex items-center gap-3"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div><span class="font-body font-semibold text-white text-sm">Jira</span></div></li>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center"><div class="flex items-center gap-3"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div><span class="font-body font-semibold text-white text-sm">Trello</span></div></li>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center"><div class="flex items-center gap-3"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div><span class="font-body font-semibold text-white text-sm">Claude Code</span></div></li>
+            </ul>
+          </div>
+
+          <!-- Game Genres -->
+          <div>
+            <h3 class="font-body text-xs font-semibold tracking-[0.25em] uppercase text-blue-400 mb-4">Game Genres</h3>
+            <ul>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center"><div class="flex items-center gap-3"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div><span class="font-body font-semibold text-white text-sm">Casual</span></div></li>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center"><div class="flex items-center gap-3"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div><span class="font-body font-semibold text-white text-sm">Mid-core</span></div></li>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center"><div class="flex items-center gap-3"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div><span class="font-body font-semibold text-white text-sm">Hypercasual</span></div></li>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center"><div class="flex items-center gap-3"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div><span class="font-body font-semibold text-white text-sm">Merge</span></div></li>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center"><div class="flex items-center gap-3"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div><span class="font-body font-semibold text-white text-sm">Battle / PvP</span></div></li>
+              <li class="py-4 border-b border-slate-800 last:border-0 flex items-center"><div class="flex items-center gap-3"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></div><span class="font-body font-semibold text-white text-sm">Idle</span></div></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ PROJECTS ════════ -->
+    <section id="projects" class="py-24 px-6 bg-slate-100 scroll-mt-16">
+      <div class="max-w-6xl mx-auto">
+        <p class="font-body text-xs font-semibold tracking-[0.3em] uppercase text-blue-600 mb-4">Portfolio</p>
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-16">
+          <h2 class="font-heading text-4xl md:text-5xl font-semibold text-slate-900">Selected Projects</h2>
         </div>
 
-      </div>
-    </div>
-  </section>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-  <!-- ═══════════ PROJECTS ═══════════ -->
-  <section class="section section-dark" id="projects">
-    <div class="container">
-      <div class="section-header section-header--light">
-        <p class="section-eyebrow section-eyebrow--light">What I've built</p>
-        <h2 class="section-heading section-heading--light">Projects</h2>
-      </div>
-
-      <div class="projects-stack">
-
-        <!-- Waifu Battle -->
-        <article class="pcard">
-          <a class="pcard-media yt-thumb" href="https://www.youtube.com/watch?v=TVHzyE2y_IU" target="_blank" rel="noopener" aria-label="Watch Waifu Battle on YouTube">
-            <div class="pcard-num">01</div>
-            <img src="https://img.youtube.com/vi/TVHzyE2y_IU/hqdefault.jpg" alt="Waifu Battle gameplay" class="yt-img" />
-            <div class="yt-play-overlay">
-              <div class="yt-play-circle">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <!-- Waifu Battle -->
+          <div class="group rounded-xl overflow-hidden bg-white border border-slate-200 shadow-md hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col">
+            <a href="https://www.youtube.com/watch?v=TVHzyE2y_IU" target="_blank" rel="noopener" class="relative overflow-hidden aspect-video bg-slate-900 block">
+              <img alt="Waifu Battle gameplay" loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://img.youtube.com/vi/TVHzyE2y_IU/hqdefault.jpg" />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-blue-600/90 group-hover:bg-blue-500 flex items-center justify-center text-white transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div>
               </div>
-              <span>Watch on YouTube</span>
-            </div>
-          </a>
-          <div class="pcard-info">
-            <div class="pcard-tags">
-              <span class="ptag ptag--genre">Mid-core</span>
-              <span class="ptag">Battle</span>
-              <span class="ptag">Unity</span>
-              <span class="ptag">C#</span>
-            </div>
-            <h3 class="pcard-title">Waifu Battle</h3>
-            <p class="pcard-desc">
-              A mid-core battle game with collectible characters, each with unique skills.
-              Features real-time combat, character progression, vivid 2D animations, and
-              an addictive gacha-style loop.
-            </p>
-            <div class="pcard-highlights">
-              <div class="ph"><span>🎯</span> Real-time combat system</div>
-              <div class="ph"><span>✨</span> 2D character animations</div>
-              <div class="ph"><span>📈</span> Progression &amp; gacha loop</div>
-            </div>
-            <div class="pcard-links">
-              <a class="pcard-link" href="https://www.youtube.com/watch?v=TVHzyE2y_IU" target="_blank" rel="noopener">
-                Watch on YouTube <span>↗</span>
-              </a>
-              <a class="pcard-link pcard-link--gp" href="https://play.google.com/store/apps/details?id=fplay.vn.waifubattle" target="_blank" rel="noopener">
-                Google Play <span>↗</span>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Sticker Merge -->
-        <article class="pcard pcard--flip">
-          <a class="pcard-media yt-thumb" href="https://www.youtube.com/watch?v=UQYzVfLUhxA" target="_blank" rel="noopener" aria-label="Watch Sticker Merge on YouTube">
-            <div class="pcard-num">02</div>
-            <img src="https://img.youtube.com/vi/UQYzVfLUhxA/hqdefault.jpg" alt="Sticker Merge gameplay" class="yt-img" />
-            <div class="yt-play-overlay">
-              <div class="yt-play-circle">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <div class="absolute top-3 left-3"><span class="font-body text-xs font-semibold px-2.5 py-1 bg-slate-900/80 text-slate-300 rounded backdrop-blur-sm">Mid-core · Battle</span></div>
+            </a>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-heading text-xl font-semibold text-slate-900 mb-1">Waifu Battle</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="font-body text-sm font-bold text-blue-600">Lead Developer</span>
+                <span class="text-slate-300">·</span>
+                <span class="font-body text-sm font-bold text-slate-500">Team of 4</span>
               </div>
-              <span>Watch on YouTube</span>
-            </div>
-          </a>
-          <div class="pcard-info">
-            <div class="pcard-tags">
-              <span class="ptag ptag--genre">Casual</span>
-              <span class="ptag">Merge</span>
-              <span class="ptag">Unity</span>
-              <span class="ptag">C#</span>
-            </div>
-            <h3 class="pcard-title">Sticker Merge</h3>
-            <p class="pcard-desc">
-              A satisfying casual merge game where players combine stickers to discover
-              new ones. Polished merge animations, clean UI, and a well-tuned
-              progression loop keep players engaged session after session.
-            </p>
-            <div class="pcard-highlights">
-              <div class="ph"><span>🔗</span> Smooth merge mechanic</div>
-              <div class="ph"><span>🎨</span> Polished UI/UX</div>
-              <div class="ph"><span>🔄</span> Engaging progression loop</div>
-            </div>
-            <div class="pcard-links">
-              <a class="pcard-link" href="https://www.youtube.com/watch?v=UQYzVfLUhxA" target="_blank" rel="noopener">
-                Watch on YouTube <span>↗</span>
-              </a>
-              <a class="pcard-link pcard-link--gp" href="https://play.google.com/store/apps/details?id=com.Fplay.StckerAlpha" target="_blank" rel="noopener">
-                Google Play <span>↗</span>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Grill Sort -->
-        <article class="pcard">
-          <a class="pcard-media yt-thumb" href="https://www.youtube.com/watch?v=jNmXzNTqr7E" target="_blank" rel="noopener" aria-label="Watch Grill Sort on YouTube">
-            <div class="pcard-num">03</div>
-            <img src="https://img.youtube.com/vi/jNmXzNTqr7E/hqdefault.jpg" alt="Grill Sort gameplay" class="yt-img" />
-            <div class="yt-play-overlay">
-              <div class="yt-play-circle">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <p class="font-body text-sm text-slate-600 leading-relaxed flex-1">Mid-core battle game with collectible characters and unique skill sets. Architected the real-time combat system, character-progression flow, and gacha economy, paired with vivid 2D animation to drive retention. Live on Google Play.</p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <a href="https://www.youtube.com/watch?v=TVHzyE2y_IU" target="_blank" rel="noopener" class="font-body inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-500">YouTube <span>↗</span></a>
+                <a href="https://play.google.com/store/apps/details?id=fplay.vn.waifubattle" target="_blank" rel="noopener" class="font-body inline-flex items-center gap-1 text-sm font-semibold text-slate-700 hover:text-slate-900">Google Play <span>↗</span></a>
               </div>
-              <span>Watch on YouTube</span>
-            </div>
-          </a>
-          <div class="pcard-info">
-            <div class="pcard-tags">
-              <span class="ptag ptag--genre">Casual</span>
-              <span class="ptag">Puzzle</span>
-              <span class="ptag">Unity</span>
-              <span class="ptag">C#</span>
-            </div>
-            <h3 class="pcard-title">Grill Sort</h3>
-            <p class="pcard-desc">
-              A satisfying casual puzzle game where players sort grilled items to the
-              correct plates. Simple one-tap mechanics, colorful visuals, and escalating
-              levels deliver an addictive pick-up-and-play experience.
-            </p>
-            <div class="pcard-highlights">
-              <div class="ph"><span>🍖</span> One-tap sort mechanics</div>
-              <div class="ph"><span>🎨</span> Colorful level design</div>
-              <div class="ph"><span>📱</span> Live on Google Play</div>
-            </div>
-            <div class="pcard-links">
-              <a class="pcard-link" href="https://www.youtube.com/watch?v=jNmXzNTqr7E" target="_blank" rel="noopener">
-                Watch on YouTube <span>↗</span>
-              </a>
-              <a class="pcard-link pcard-link--gp" href="https://play.google.com/store/apps/details?id=com.Fplay.GrillSort" target="_blank" rel="noopener">
-                Google Play <span>↗</span>
-              </a>
             </div>
           </div>
-        </article>
 
+          <!-- Sticker Merge -->
+          <div class="group rounded-xl overflow-hidden bg-white border border-slate-200 shadow-md hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col">
+            <a href="https://www.youtube.com/watch?v=UQYzVfLUhxA" target="_blank" rel="noopener" class="relative overflow-hidden aspect-video bg-slate-900 block">
+              <img alt="Sticker Merge gameplay" loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://img.youtube.com/vi/UQYzVfLUhxA/hqdefault.jpg" />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-blue-600/90 group-hover:bg-blue-500 flex items-center justify-center text-white transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div>
+              </div>
+              <div class="absolute top-3 left-3"><span class="font-body text-xs font-semibold px-2.5 py-1 bg-slate-900/80 text-slate-300 rounded backdrop-blur-sm">Casual · Merge</span></div>
+            </a>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-heading text-xl font-semibold text-slate-900 mb-1">Sticker Merge</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="font-body text-sm font-bold text-blue-600">Unity Developer</span>
+                <span class="text-slate-300">·</span>
+                <span class="font-body text-sm font-bold text-slate-500">Mobile</span>
+              </div>
+              <p class="font-body text-sm text-slate-600 leading-relaxed flex-1">Casual merge game where players combine stickers to unlock new ones. Developed the core merge mechanic and progression loop, polished the UI/UX, and tuned pacing to keep players engaged session after session. Live on Google Play.</p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <a href="https://www.youtube.com/watch?v=UQYzVfLUhxA" target="_blank" rel="noopener" class="font-body inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-500">YouTube <span>↗</span></a>
+                <a href="https://play.google.com/store/apps/details?id=com.Fplay.StckerAlpha" target="_blank" rel="noopener" class="font-body inline-flex items-center gap-1 text-sm font-semibold text-slate-700 hover:text-slate-900">Google Play <span>↗</span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grill Sort -->
+          <div class="group rounded-xl overflow-hidden bg-white border border-slate-200 shadow-md hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col">
+            <a href="https://www.youtube.com/watch?v=jNmXzNTqr7E" target="_blank" rel="noopener" class="relative overflow-hidden aspect-video bg-slate-900 block">
+              <img alt="Grill Sort gameplay" loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://img.youtube.com/vi/jNmXzNTqr7E/hqdefault.jpg" />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-blue-600/90 group-hover:bg-blue-500 flex items-center justify-center text-white transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div>
+              </div>
+              <div class="absolute top-3 left-3"><span class="font-body text-xs font-semibold px-2.5 py-1 bg-slate-900/80 text-slate-300 rounded backdrop-blur-sm">Casual · Puzzle</span></div>
+            </a>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-heading text-xl font-semibold text-slate-900 mb-1">Grill Sort</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="font-body text-sm font-bold text-blue-600">Unity Developer</span>
+                <span class="text-slate-300">·</span>
+                <span class="font-body text-sm font-bold text-slate-500">Mobile</span>
+              </div>
+              <p class="font-body text-sm text-slate-600 leading-relaxed flex-1">Casual sorting puzzle where players match grilled items to the correct plates. Implemented the core sort logic, level-data structure, and difficulty curve behind a one-tap, pick-up-and-play experience. Live on Google Play.</p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <a href="https://www.youtube.com/watch?v=jNmXzNTqr7E" target="_blank" rel="noopener" class="font-body inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-500">YouTube <span>↗</span></a>
+                <a href="https://play.google.com/store/apps/details?id=com.Fplay.GrillSort" target="_blank" rel="noopener" class="font-body inline-flex items-center gap-1 text-sm font-semibold text-slate-700 hover:text-slate-900">Google Play <span>↗</span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shopocalypse -->
+          <div class="group rounded-xl overflow-hidden bg-white border border-slate-200 shadow-md hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col">
+            <a href="https://www.youtube.com/watch?v=rpIysfuHpDI" target="_blank" rel="noopener" class="relative overflow-hidden aspect-video bg-slate-900 block">
+              <img alt="Shopocalypse - Merge Survival gameplay" loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://img.youtube.com/vi/rpIysfuHpDI/hqdefault.jpg" />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-blue-600/90 group-hover:bg-blue-500 flex items-center justify-center text-white transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div>
+              </div>
+              <div class="absolute top-3 left-3"><span class="font-body text-xs font-semibold px-2.5 py-1 bg-slate-900/80 text-slate-300 rounded backdrop-blur-sm">Casual · Merge / Survival</span></div>
+            </a>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-heading text-xl font-semibold text-slate-900 mb-1">Shopocalypse - Merge Survival</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="font-body text-sm font-bold text-blue-600">Unity Developer</span>
+                <span class="text-slate-300">·</span>
+                <span class="font-body text-sm font-bold text-slate-500">Mobile</span>
+              </div>
+              <p class="font-body text-sm text-slate-600 leading-relaxed flex-1">Merge-survival game where players combine scavenged items to rebuild a shop and fend off a post-apocalyptic world. Contributed to the merge mechanic, item-tier progression, and survival gameplay loop. Live on Google Play.</p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <a href="https://www.youtube.com/watch?v=rpIysfuHpDI" target="_blank" rel="noopener" class="font-body inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-500">YouTube <span>↗</span></a>
+                <a href="https://play.google.com/store/apps/details?id=com.FPlay.Shopocalypse" target="_blank" rel="noopener" class="font-body inline-flex items-center gap-1 text-sm font-semibold text-slate-700 hover:text-slate-900">Google Play <span>↗</span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coffee Link -->
+          <div class="group rounded-xl overflow-hidden bg-white border border-slate-200 shadow-md hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col">
+            <a href="https://www.youtube.com/shorts/bQQNE-B_SjY" target="_blank" rel="noopener" class="relative overflow-hidden aspect-video bg-slate-900 block">
+              <img alt="Coffee Link: Cozy Puzzle gameplay" loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://img.youtube.com/vi/bQQNE-B_SjY/hqdefault.jpg" />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-14 h-14 rounded-full bg-blue-600/90 group-hover:bg-blue-500 flex items-center justify-center text-white transition-colors"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M8 5v14l11-7z"/></svg></div>
+              </div>
+              <div class="absolute top-3 left-3"><span class="font-body text-xs font-semibold px-2.5 py-1 bg-slate-900/80 text-slate-300 rounded backdrop-blur-sm">Casual · Puzzle</span></div>
+            </a>
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="font-heading text-xl font-semibold text-slate-900 mb-1">Coffee Link: Cozy Puzzle</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="font-body text-sm font-bold text-blue-600">Unity Developer</span>
+                <span class="text-slate-300">·</span>
+                <span class="font-body text-sm font-bold text-slate-500">Mobile</span>
+              </div>
+              <p class="font-body text-sm text-slate-600 leading-relaxed flex-1">Cozy tile-linking puzzle set in a coffee shop world, connecting matching items to clear boards and unlock cafe decor. Worked on the link/match logic, board generation, and level progression. Live on Google Play.</p>
+              <div class="flex flex-wrap gap-3 mt-4">
+                <a href="https://www.youtube.com/shorts/bQQNE-B_SjY" target="_blank" rel="noopener" class="font-body inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-500">YouTube <span>↗</span></a>
+                <a href="https://play.google.com/store/apps/details?id=com.fplay.linkmatch" target="_blank" rel="noopener" class="font-body inline-flex items-center gap-1 text-sm font-semibold text-slate-700 hover:text-slate-900">Google Play <span>↗</span></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- itch.io banner -->
+        <a href="https://drakan1701.itch.io/" target="_blank" rel="noopener" class="mt-8 group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-400 transition-all duration-300 p-8">
+          <div>
+            <p class="font-body text-xs font-semibold tracking-[0.3em] uppercase text-blue-400 mb-2">Published on itch.io</p>
+            <h3 class="font-heading text-2xl font-semibold text-white mb-2">Hypercasual Mini Games</h3>
+            <p class="font-body text-sm text-slate-400 leading-relaxed max-w-xl">A collection of fast, fun hypercasual prototypes — each built to explore a distinct mechanic. Demonstrates rapid prototyping across varied gameplay and art styles.</p>
+          </div>
+          <span class="font-body inline-flex items-center gap-2 px-6 py-3 bg-blue-600 group-hover:bg-blue-500 text-white text-sm font-semibold tracking-wide uppercase rounded transition-colors shrink-0">Play Now <span>↗</span></span>
+        </a>
       </div>
+    </section>
 
-      <!-- itch.io full-width -->
-      <a class="itch-banner" href="https://drakan1701.itch.io/" target="_blank" rel="noopener">
-        <div class="itch-banner-left">
-          <p class="section-eyebrow section-eyebrow--light">Published on itch.io</p>
-          <h3>Hypercasual Mini Games</h3>
-          <p>A collection of fast, fun hypercasual games — each exploring a distinct mechanic. Simple to pick up, hard to put down.</p>
-          <div class="itch-meta">
-            <span class="ptag">Hypercasual</span>
-            <span class="ptag">Mini Games</span>
-            <span class="ptag">Unity</span>
+    <!-- ════════ EDUCATION ════════ -->
+    <section id="education" class="py-24 px-6 bg-sky-50 scroll-mt-16">
+      <div class="max-w-6xl mx-auto">
+        <p class="font-body text-xs font-semibold tracking-[0.3em] uppercase text-blue-600 mb-4">Academic Background</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-semibold text-slate-900 mb-16">Education</h2>
+        <div class="grid sm:grid-cols-2 gap-8">
+
+          <div class="rounded-xl border border-slate-200 p-8 hover:border-blue-400 hover:shadow-lg transition-all duration-300">
+            <p class="font-body text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 mb-3">2014 – 2018</p>
+            <h3 class="font-heading text-xl font-semibold text-slate-900 mb-1">National Economics University (NEU)</h3>
+            <p class="font-body text-sm text-slate-600">Bachelor's Degree</p>
           </div>
-        </div>
-        <div class="itch-banner-right">
-          <div class="itch-cta">
-            <span class="itch-icon-big">🕹️</span>
-            <span class="itch-play-btn">Play Now ↗</span>
+
+          <div class="rounded-xl border border-slate-200 p-8 hover:border-blue-400 hover:shadow-lg transition-all duration-300">
+            <p class="font-body text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 mb-3">2016 – 2018</p>
+            <h3 class="font-heading text-xl font-semibold text-slate-900 mb-1">FPT Aptech</h3>
+            <p class="font-body text-sm text-slate-600">Software Development · Programming &amp; Engineering</p>
           </div>
-        </div>
-      </a>
 
-    </div>
-  </section>
-
-  <!-- ═══════════ CONTACT ═══════════ -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact-block">
-        <div class="contact-text">
-          <p class="section-eyebrow">Let's talk</p>
-          <h2 class="contact-heading">Have a project in mind?</h2>
-          <p class="contact-sub">Open to new opportunities, game dev collaborations, or just a chat about Unity.</p>
-        </div>
-        <div class="contact-links">
-          <a class="clink" href="mailto:dattq1701@gmail.com">
-            <div class="clink-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </div>
-            <div class="clink-text">
-              <span class="clink-label">Email</span>
-              <span class="clink-val">dattq1701@gmail.com</span>
-            </div>
-            <span class="clink-arrow">↗</span>
-          </a>
-
-          <a class="clink" href="https://github.com/datto171" target="_blank" rel="noopener">
-            <div class="clink-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </div>
-            <div class="clink-text">
-              <span class="clink-label">GitHub</span>
-              <span class="clink-val">github.com/datto171</span>
-            </div>
-            <span class="clink-arrow">↗</span>
-          </a>
-
-          <a class="clink" href="https://drakan1701.itch.io/" target="_blank" rel="noopener">
-            <div class="clink-icon clink-icon--emoji">🕹️</div>
-            <div class="clink-text">
-              <span class="clink-label">itch.io</span>
-              <span class="clink-val">drakan1701.itch.io</span>
-            </div>
-            <span class="clink-arrow">↗</span>
-          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════ FOOTER ═══════════ -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span class="footer-logo">TQD<span>.</span></span>
-      <span>© 2026 Tran Quoc Dat</span>
-      <span>Unity Developer</span>
+    <!-- ════════ CONTACT ════════ -->
+    <section id="contact" class="py-24 px-6 bg-slate-900 scroll-mt-16">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="font-body text-xs font-semibold tracking-[0.3em] uppercase text-blue-400 mb-4">Let's talk</p>
+          <h2 class="font-heading text-4xl md:text-5xl font-semibold text-white leading-tight mb-6">Have a project<br/>in mind?</h2>
+          <p class="font-body text-lg text-slate-400 leading-relaxed max-w-md">Open to new opportunities, game dev collaborations, or just a chat about Unity.</p>
+        </div>
+        <div class="space-y-4">
+          <a href="mailto:dattq1701@gmail.com" class="group flex items-center gap-4 rounded-lg border border-slate-800 hover:border-blue-400 bg-slate-800/30 p-5 transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-blue-600/15 text-blue-400 flex items-center justify-center shrink-0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+            <div class="flex-1">
+              <span class="block font-body text-xs tracking-[0.2em] uppercase text-slate-500">Email</span>
+              <span class="block font-body text-sm font-semibold text-white">dattq1701@gmail.com</span>
+            </div>
+            <span class="text-slate-500 group-hover:text-blue-400 transition-colors">↗</span>
+          </a>
+
+          <a href="https://github.com/datto171" target="_blank" rel="noopener" class="group flex items-center gap-4 rounded-lg border border-slate-800 hover:border-blue-400 bg-slate-800/30 p-5 transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-blue-600/15 text-blue-400 flex items-center justify-center shrink-0"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg></div>
+            <div class="flex-1">
+              <span class="block font-body text-xs tracking-[0.2em] uppercase text-slate-500">GitHub</span>
+              <span class="block font-body text-sm font-semibold text-white">github.com/datto171</span>
+            </div>
+            <span class="text-slate-500 group-hover:text-blue-400 transition-colors">↗</span>
+          </a>
+
+          <a href="https://drakan1701.itch.io/" target="_blank" rel="noopener" class="group flex items-center gap-4 rounded-lg border border-slate-800 hover:border-blue-400 bg-slate-800/30 p-5 transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-blue-600/15 text-blue-400 flex items-center justify-center shrink-0 text-lg">🕹️</div>
+            <div class="flex-1">
+              <span class="block font-body text-xs tracking-[0.2em] uppercase text-slate-500">itch.io</span>
+              <span class="block font-body text-sm font-semibold text-white">drakan1701.itch.io</span>
+            </div>
+            <span class="text-slate-500 group-hover:text-blue-400 transition-colors">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="bg-slate-950 py-8 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500">
+      <span class="font-heading text-white font-semibold">Tran Quoc Dat</span>
+      <span class="font-body text-sm">© 2026 Tran Quoc Dat</span>
+      <span class="font-body text-sm">Unity Developer</span>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Nav background on scroll
+    const nav = document.getElementById('nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navLogo = document.getElementById('nav-logo');
+    function onScroll() {
+      if (window.scrollY > 40) {
+        nav.classList.add('bg-sky-50/90', 'backdrop-blur', 'shadow-sm');
+        nav.classList.remove('bg-transparent');
+        navLogo.classList.remove('text-white');
+        navLogo.classList.add('text-slate-900');
+        navLinks.forEach(l => { l.classList.remove('text-slate-300'); l.classList.add('text-slate-600'); });
+      } else {
+        nav.classList.remove('bg-sky-50/90', 'backdrop-blur', 'shadow-sm');
+        nav.classList.add('bg-transparent');
+        navLogo.classList.add('text-white');
+        navLogo.classList.remove('text-slate-900');
+        navLinks.forEach(l => { l.classList.add('text-slate-300'); l.classList.remove('text-slate-600'); });
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    // Mobile menu
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  </script>
 </body>
 </html>

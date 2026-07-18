@@ -45,6 +45,7 @@ const revealTargets = [
   '.hero-badge', '.hero-heading', '.hero-tagline', '.hero-btns', '.hero-stats',
   '.about-text', '.about-pills',
   '.bento-cell',
+  '.exp-item', '.edu-card',
   '.pcard', '.itch-banner',
   '.contact-text', '.clink',
 ];
